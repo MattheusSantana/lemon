@@ -1,0 +1,28 @@
+Lemon - Teste Backend - Elegibilidade
+Este projeto implementa uma API para verificar a elegibilidade de clientes da Lemon com base em seus dados de consumo de energia.
+
+Instalação
+Certifique-se de ter o Node.js versão 18+ instalado em sua máquina. Você pode baixá-lo em nodejs.org.
+
+Clone este repositório para sua máquina local usando o seguinte comando:
+git clonehttps://github.com/MattheusSantana/lemon.git
+
+
+Navegue até o diretório do projeto:
+cd lemon
+
+Instale as dependências do projeto usando npm:
+npm install
+
+Execução
+Para executar a aplicação, execute o seguinte comando:
+npm run dev
+
+A aplicação estará acessível em http://localhost:3000.
+
+Testes
+Para executar os testes automatizados, utilize o seguinte comando:
+npm test
+
+Contribuição
+Se você encontrar algum problema ou tiver alguma sugestão para melhorar este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
