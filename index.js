@@ -17,8 +17,8 @@ app.post('/checkEligibility', (req, res) => {
   }
 });
 
-app.listen(port, () => {
+export const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}.`);
 });
 
-export default app;
+export default server;

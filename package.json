@@ -2,7 +2,7 @@
   "name": "lemon",
   "type": "module",
   "version": "1.0.0",
-  "description": "lemon test",
+  "description": "lemon test --detectOpenHandles --ci --forceExitAfterTestRun",
   "main": "index.js",
   "scripts": {
     "test": "jest",

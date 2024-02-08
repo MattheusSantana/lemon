@@ -1,9 +1,9 @@
 import request from 'supertest';
-import app from './index.js';
+import server from './index.js';
 
 describe('POST /checkEligibility', () => {
   it('should return 200 and eligible', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -22,7 +22,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and eligible', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -40,7 +40,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and eligible', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -58,7 +58,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 400 for invalid input', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({});
 
@@ -66,7 +66,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 400 and razoesDeInelegibilidade for invalid input with empty historicoDeConsumo', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -83,7 +83,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 400 and razoesDeInelegibilidade for invalid input with empty historicoDeConsumo', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -100,7 +100,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and razoesDeInelegibilidade for invalid input with classeDeConsumo not accepted', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -120,7 +120,7 @@ describe('POST /checkEligibility', () => {
   });
 
     it('should return 200 and razoesDeInelegibilidade for invalid input with classeDeConsumo not accepted', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -140,7 +140,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and razoesDeInelegibilidade for invalid input with modalidadeTarifaria not accepted', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -160,7 +160,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and razoesDeInelegibilidade for invalid input with modalidadeTarifaria not accepted', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -180,7 +180,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and razoesDeInelegibilidade for invalid input with classeDeConsumo and modalidadeTarifaria not accepted', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -201,7 +201,7 @@ describe('POST /checkEligibility', () => {
   });
 
   it('should return 200 and razoesDeInelegibilidade for invalid input with classeDeConsumo, modalidadeTarifaria not accepted and AboveComsumption', async () => {
-    const response = await request(app)
+    const response = await request(server)
       .post('/checkEligibility')
       .send({
         numeroDoDocumento: '14041737706',
@@ -222,4 +222,7 @@ describe('POST /checkEligibility', () => {
     });
   });
 
+  afterEach(async () => {
+    await server.close();
+  });
 });
